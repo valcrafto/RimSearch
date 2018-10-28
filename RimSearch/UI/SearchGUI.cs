@@ -22,6 +22,7 @@ namespace RimSearch.UI
         /// <returns>New text from input.</returns>
         public static string FormattedTextField(Rect rect, string text)
         {
+
             //string controlName = text.GetHashCode() + "_FormattedTextField";
             //GUI.SetNextControlName(controlName);
 
@@ -30,6 +31,7 @@ namespace RimSearch.UI
 
             //Handle control.
             string outText = GUI.TextField(rect, text);
+            
 
             //Overlay parts of text.
             TextEditor textEditor = (TextEditor)GUIUtility.GetStateObject(typeof(TextEditor), controlID);

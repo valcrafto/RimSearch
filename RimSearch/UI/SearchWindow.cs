@@ -89,7 +89,7 @@ namespace RimSearch.UI
 
             //Draw search bar widget.
             string oldSearchTerm = searchTerm;
-
+            
             searchTerm = Widgets.TextField(searchBarRect, searchTerm);
             //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
 

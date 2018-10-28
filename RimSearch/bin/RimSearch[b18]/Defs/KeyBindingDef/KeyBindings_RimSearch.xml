@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<KeyBindingDef>
+		<defName>RimSearch_Search</defName>
+		<label>open search window</label>
+		<category>Game</category>
+		<defaultKeyCodeA>Z</defaultKeyCodeA>
+	</KeyBindingDef>
+</Defs>

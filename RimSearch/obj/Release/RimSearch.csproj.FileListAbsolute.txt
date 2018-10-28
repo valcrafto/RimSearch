@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\964675612\Assemblies\RimSearch.dll
+C:\Users\Rocco\Desktop\RimSearch-src\RimSearch\RimSearch\obj\Release\RimSearch.csprojResolveAssemblyReference.cache
+C:\Users\Rocco\Desktop\RimSearch-src\RimSearch\RimSearch\obj\Release\RimSearch.dll
+C:\Users\Rocco\Desktop\My RimSearch-src\RimSearch\RimSearch\bin\Release\RimSearch.dll
+C:\Users\Rocco\Desktop\My RimSearch-src\RimSearch\RimSearch\obj\Release\RimSearch.csprojResolveAssemblyReference.cache
+C:\Users\Rocco\Desktop\My RimSearch-src\RimSearch\RimSearch\obj\Release\RimSearch.dll

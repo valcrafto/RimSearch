@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>RimSearch</name>
+	<author>ChJees - updated by Rock5</author>
+  <url>https://ludeon.com/forums/index.php?topic=37177.msg380273#msg380273</url>
+	<targetVersion>0.18.1722</targetVersion>
+<description>Ever wanted to easily find a certain item after a trade on the map or where one of your named animals are? Then this mod is for you!
+
+Default keybinding for opening the search window is 'Z'. Can be rebound.
+
+Search for:
+*Pawns by name or kind.
+*Pawns belonging to colony.
+*Things by their name.
+*Across multiplie maps.
+*With one click you can go to your pawn, thing or location!
+
+Changes:
+- Updated to work with B18
+- Removed search world option. It didn't work anyway.
+- Changed default search term to ".-"
+- Made Search window draggable
+- Now search window doesn't close when clicking go to item
+- When rimsearch window opens the text box gets focus. Thanks Jamestec.
+
+Credits:
+ChJees – Concept, C# &amp; XML
+Rock5 - Update to B18 and minor fixes</description>
+</ModMetaData>

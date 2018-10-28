@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!-- UI -->
+	<!-- Search Window, Information -->
+	<RimSearchInformation>Before search term flags: ! = In all Maps;  &lt; = On the Planet;  - = Look for Pawns;  # = In Colony;  . = Look for Things;  * = Get All;</RimSearchInformation>
+
+	<!-- Result strings -->
+	<RimSearchResultsPawns>Map Pawns ({0} Results)</RimSearchResultsPawns>
+	<RimSearchResultsThings>Map Things ({0} Results)</RimSearchResultsThings>
+	<RimSearchResultsPlanetLocations>Planet Locations ({0} Results)</RimSearchResultsPlanetLocations>
+
+	<!-- Mod Settings Strings -->
+	<RimSearchSettingsDefaultSearchTermLabel>Default Search Term</RimSearchSettingsDefaultSearchTermLabel>
+</LanguageData>

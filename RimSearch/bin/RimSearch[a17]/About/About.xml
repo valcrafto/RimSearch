@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>RimSearch</name>
+	<author>ChJees</author>
+	<url></url>
+	<targetVersion>0.17.1557</targetVersion>
+<description>Ever wanted to easily find a certain item after a trade on the map or where one of your named animals are? Then this mod is for you!
+
+Default keybinding for opening the search window is 'Z'. Can be rebound.
+
+Search for:
+*Pawns by name or kind.
+*Pawns belonging to colony.
+*Things by their name.
+*Across multiplie maps.
+*Planet locations by name.
+*With one click you can go to your pawn, thing or location!
+
+Credits:
+ChJees – Concept, C# &amp; XML</description>
+</ModMetaData>

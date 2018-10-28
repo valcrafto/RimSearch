@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!-- UI -->
+	<!-- Search Window, Information -->
+	<RimSearchInformation>Flaggor innan sök termer: ! = I alla kartor;  &lt; = På Planeten;  - = Leta efter Karaktärer;  # = I kolonin;  . = Leta efter Saker;  * = Ta allt;</RimSearchInformation>
+
+	<!-- Result strings -->
+	<RimSearchResultsPawns>Kart Karaktärer ({0} Resultat)</RimSearchResultsPawns>
+	<RimSearchResultsThings>Kart Saker ({0} Resultat)</RimSearchResultsThings>
+	<RimSearchResultsPlanetLocations>Planet Platser ({0} Resultat)</RimSearchResultsPlanetLocations>
+
+	<!-- Mod Settings Strings -->
+	<RimSearchSettingsDefaultSearchTermLabel>Standard Sök Term</RimSearchSettingsDefaultSearchTermLabel>
+</LanguageData>

@@ -126,10 +126,10 @@ namespace RimSearch.Logic
                                 filterAllMaps = true;
                                 break;
 
-                            // Option disabled as it doesn't work
-                            //case '<': //Filter planet locations.
-                            //    filterWorldMap = true;
-                            //    break;
+                              //  Option disabled as it doesn't work
+                            case '<': //Filter planet locations.
+                                filterWorldMap = true;
+                                break;
 
                             case '-': //Filter map pawns.
                                 filterPawns = true;
@@ -247,7 +247,7 @@ namespace RimSearch.Logic
             }
 
             //Lookup world objects.
-            if (filterWorldMap)
+            if (filterWorldMap  || filterAll)
             {
                 //Look in world map.
                 ExecuteWorldMap(Find.World);
@@ -277,6 +277,16 @@ namespace RimSearch.Logic
                     ExecuteThing(thing);
                 }
             }
+
+            //WorldMap
+
+            //Lookup world objects.
+            if (filterWorldMap)
+            {
+                //Look in world map.
+                ExecuteWorldMap(Find.World);
+            }
+
         }
 
         /// <summary>
@@ -359,7 +369,7 @@ namespace RimSearch.Logic
                     break;
             }
 
-            if (fulfilledPredicates >= queryWorldObjectPredicates.Count)
+            //if (fulfilledPredicates >= queryWorldObjectPredicates.Count)
                 worldObjectResultSet.Add(worldObject);
         }
     }

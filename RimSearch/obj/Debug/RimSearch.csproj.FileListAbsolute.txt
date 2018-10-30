@@ -10,3 +10,8 @@ C:\Users\Rocco\Desktop\My RimSearch-src\RimSearch\RimSearch\obj\Debug\RimSearch.
 C:\Users\valcrafto\Documents\Visual Studio 2017\Projects\RimSearch\RimSearch\bin\Debug\RimSearch.dll
 C:\Users\valcrafto\Documents\Visual Studio 2017\Projects\RimSearch\RimSearch\obj\Debug\RimSearch.csprojResolveAssemblyReference.cache
 C:\Users\valcrafto\Documents\Visual Studio 2017\Projects\RimSearch\RimSearch\obj\Debug\RimSearch.dll
+C:\Users\valcrafto\Documents\GitHub\RimSearch\RimSearch\bin\Debug\RimSearch.dll
+C:\Users\valcrafto\Documents\GitHub\RimSearch\RimSearch\obj\Debug\RimSearch.csprojAssemblyReference.cache
+C:\Users\valcrafto\Documents\GitHub\RimSearch\RimSearch\obj\Debug\RimSearch.csproj.CoreCompileInputs.cache
+C:\Users\valcrafto\Documents\GitHub\RimSearch\RimSearch\obj\Debug\RimSearch.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimSearch[1.0]\Assemblies\RimSearch.dll

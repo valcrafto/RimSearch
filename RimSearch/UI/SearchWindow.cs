@@ -183,7 +183,7 @@ namespace RimSearch.UI
                         labelRect.width = labelRect.width - portraitRect.width - (rowHeight * 2);
                         labelRect.x += portraitRect.width;
 
-                        Widgets.Label(labelRect, pawn.LabelCap);
+                        Widgets.Label(labelRect, pawn.LabelCap+" Pawn");
 
                         //Draw go-to button
                         Rect goToRect = new Rect(rowRect);
@@ -260,7 +260,7 @@ namespace RimSearch.UI
                         labelRect.width = labelRect.width - portraitRect.width - (rowHeight * 2);
                         labelRect.x += portraitRect.width;
 
-                        Widgets.Label(labelRect, thing.LabelCap);
+                        Widgets.Label(labelRect, thing.LabelCap+" "+ searchQuery.worldObjectResultSet.Count);
 
                         //Draw go-to button
                         Rect goToRect = new Rect(rowRect);
@@ -336,10 +336,11 @@ namespace RimSearch.UI
                         Color oldColor = GUI.color;
 
                         GUI.color = worldObject.ExpandingIconColor;
-                        if(!worldObject.def.texture.NullOrEmpty())
-                            Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get(worldObject.def.texture, true), 0.75f);
-                        else
-                            Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get("World/WorldObjects/DefaultFactionBase", true), 0.75f);
+                        /* if(!worldObject.def.texture.NullOrEmpty())
+                             Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get(worldObject.def.texture, true), 0.75f);
+                         else
+                             Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get("World/WorldObjects/DefaultFactionBase", true), 0.75f);
+                         */
                         GUI.color = oldColor;
 
                         //Draw name
@@ -347,7 +348,7 @@ namespace RimSearch.UI
                         labelRect.width = labelRect.width - portraitRect.width - (rowHeight * 2);
                         labelRect.x += portraitRect.width;
 
-                        Widgets.Label(labelRect, worldObject.LabelCap);
+                        Widgets.Label(labelRect, worldObject.LabelCap+" WorldObject");
 
                         //Draw go-to button
                         Rect goToRect = new Rect(rowRect);

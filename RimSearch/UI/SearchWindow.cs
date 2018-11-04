@@ -86,12 +86,15 @@ namespace RimSearch.UI
             Rect searchBarRect = new Rect(inRect);
             searchBarRect.y += searchInfoRect.height;
             searchBarRect.height = Text.LineHeight + 2;
+            //searchBarRect.width = searchBarRect.width/4f;
+
 
             //Draw search bar widget.
             string oldSearchTerm = searchTerm;
-
+            
             searchTerm = Widgets.TextField(searchBarRect, searchTerm);
             //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
+            
 
             //If search terms do not match; 
             if (searchTerm != oldSearchTerm)
@@ -141,7 +144,7 @@ namespace RimSearch.UI
                 float thingsHeight = searchQuery.thingResultSet.Count > 0 ? ((searchQuery.thingResultSet.Count + 1) * rowHeight) : 0;
 
                 //Set inner view height to appropiate height.
-                innerRect.height = worlObjectsHeight + pawnsHeight + thingsHeight;
+                innerRect.height = worlObjectsHeight + pawnsHeight + thingsHeight+ rowHeight;
 
                 Widgets.BeginScrollView(outerRect, ref resultsAreaScroll, innerRect, true);
 
@@ -336,10 +339,11 @@ namespace RimSearch.UI
                         Color oldColor = GUI.color;
 
                         GUI.color = worldObject.ExpandingIconColor;
-                        if(!worldObject.def.texture.NullOrEmpty())
-                            Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get(worldObject.def.texture, true), 0.75f);
-                        else
-                            Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get("World/WorldObjects/DefaultFactionBase", true), 0.75f);
+                        /* if(!worldObject.def.texture.NullOrEmpty())
+                             Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get(worldObject.def.texture, true), 0.75f);
+                         else
+                             Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get("World/WorldObjects/DefaultFactionBase", true), 0.75f);
+                         */
                         GUI.color = oldColor;
 
                         //Draw name
@@ -387,9 +391,33 @@ namespace RimSearch.UI
                     }
                 }
 
+                //Draw select all button
+                Rect selectAll = new Rect(rowRect);
+                selectAll.width = 150f;
+                selectAll.height -= 10f;
+                selectAll.x += 300f;
+                
+                if (Widgets.ButtonText(selectAll, "RimSearchselectAllButton".Translate(searchQuery.worldObjectResultSet.Count), true, true, true))
+                {
+                    foreach (Pawn pawn in searchQuery.pawnResultSet)
+                        Find.Selector.Select(pawn);
+
+                    foreach (Thing thing in searchQuery.thingResultSet)
+                        Find.Selector.Select(thing);
+
+                    foreach (WorldObject worldObject in searchQuery.worldObjectResultSet)
+                        Find.Selector.Select(worldObject);
+
+                    Close(true);
+                }
+
+
                 Text.Anchor = TextAnchor.UpperLeft;
 
                 Widgets.EndScrollView();
+
+               
+
             }
         }
 

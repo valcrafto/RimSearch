@@ -369,7 +369,7 @@ namespace RimSearch.Logic
                     break;
             }
 
-            //if (fulfilledPredicates >= queryWorldObjectPredicates.Count)
+            if (fulfilledPredicates >= queryWorldObjectPredicates.Count)
                 worldObjectResultSet.Add(worldObject);
         }
     }

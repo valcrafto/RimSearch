@@ -86,12 +86,15 @@ namespace RimSearch.UI
             Rect searchBarRect = new Rect(inRect);
             searchBarRect.y += searchInfoRect.height;
             searchBarRect.height = Text.LineHeight + 2;
+            //searchBarRect.width = searchBarRect.width/4f;
+
 
             //Draw search bar widget.
             string oldSearchTerm = searchTerm;
             
             searchTerm = Widgets.TextField(searchBarRect, searchTerm);
             //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
+            
 
             //If search terms do not match; 
             if (searchTerm != oldSearchTerm)
@@ -141,7 +144,7 @@ namespace RimSearch.UI
                 float thingsHeight = searchQuery.thingResultSet.Count > 0 ? ((searchQuery.thingResultSet.Count + 1) * rowHeight) : 0;
 
                 //Set inner view height to appropiate height.
-                innerRect.height = worlObjectsHeight + pawnsHeight + thingsHeight;
+                innerRect.height = worlObjectsHeight + pawnsHeight + thingsHeight+ rowHeight;
 
                 Widgets.BeginScrollView(outerRect, ref resultsAreaScroll, innerRect, true);
 
@@ -183,7 +186,7 @@ namespace RimSearch.UI
                         labelRect.width = labelRect.width - portraitRect.width - (rowHeight * 2);
                         labelRect.x += portraitRect.width;
 
-                        Widgets.Label(labelRect, pawn.LabelCap+" Pawn");
+                        Widgets.Label(labelRect, pawn.LabelCap);
 
                         //Draw go-to button
                         Rect goToRect = new Rect(rowRect);
@@ -260,7 +263,7 @@ namespace RimSearch.UI
                         labelRect.width = labelRect.width - portraitRect.width - (rowHeight * 2);
                         labelRect.x += portraitRect.width;
 
-                        Widgets.Label(labelRect, thing.LabelCap+" "+ searchQuery.worldObjectResultSet.Count);
+                        Widgets.Label(labelRect, thing.LabelCap);
 
                         //Draw go-to button
                         Rect goToRect = new Rect(rowRect);
@@ -348,7 +351,7 @@ namespace RimSearch.UI
                         labelRect.width = labelRect.width - portraitRect.width - (rowHeight * 2);
                         labelRect.x += portraitRect.width;
 
-                        Widgets.Label(labelRect, worldObject.LabelCap+" WorldObject");
+                        Widgets.Label(labelRect, worldObject.LabelCap);
 
                         //Draw go-to button
                         Rect goToRect = new Rect(rowRect);
@@ -388,9 +391,33 @@ namespace RimSearch.UI
                     }
                 }
 
+                //Draw select all button
+                Rect selectAll = new Rect(rowRect);
+                selectAll.width = 150f;
+                selectAll.height -= 10f;
+                selectAll.x += 300f;
+                
+                if (Widgets.ButtonText(selectAll, "RimSearchselectAllButton".Translate(searchQuery.worldObjectResultSet.Count), true, true, true))
+                {
+                    foreach (Pawn pawn in searchQuery.pawnResultSet)
+                        Find.Selector.Select(pawn);
+
+                    foreach (Thing thing in searchQuery.thingResultSet)
+                        Find.Selector.Select(thing);
+
+                    foreach (WorldObject worldObject in searchQuery.worldObjectResultSet)
+                        Find.Selector.Select(worldObject);
+
+                    Close(true);
+                }
+
+
                 Text.Anchor = TextAnchor.UpperLeft;
 
                 Widgets.EndScrollView();
+
+               
+
             }
         }
 

@@ -35,9 +35,8 @@ namespace RimSearch.Data
         public override void DoSettingsWindowContents(Rect inRect)
         {
             //Row height to use.
-            //float rowHeight = (Text.LineHeight * 2.25f) + 2;
-            float rowHeight = (Text.LineHeight * 1f) + 2;
-
+            float rowHeight = (Text.LineHeight * 2.25f) + 2;
+            
             float rowOffset = 0f;
             //Default search term.
             {

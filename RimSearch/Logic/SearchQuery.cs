@@ -127,9 +127,9 @@ namespace RimSearch.Logic
                                 break;
 
                               //  Option disabled as it doesn't work
-                            case '<': //Filter planet locations.
-                                filterWorldMap = true;
-                                break;
+                            //case '<': //Filter planet locations.
+                            //    filterWorldMap = true;
+                            //    break;
 
                             case '-': //Filter map pawns.
                                 filterPawns = true;

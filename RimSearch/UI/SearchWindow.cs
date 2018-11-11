@@ -170,7 +170,7 @@ namespace RimSearch.UI
                     //Next row
                     rowRect.y += rowHeight;
 
-                    foreach(Pawn pawn in searchQuery.pawnResultSet)
+                    foreach(Pawn pawn in searchQuery.pawnResultSet.OrderBy(o => o.LabelCap))
                     {
                         //Draw pawn stuff.
                         Widgets.DrawHighlightIfMouseover(rowRect);
@@ -247,7 +247,7 @@ namespace RimSearch.UI
                     //Next row
                     rowRect.y += rowHeight;
 
-                    foreach (Thing thing in searchQuery.thingResultSet)
+                    foreach (Thing thing in searchQuery.thingResultSet.OrderBy(o => o.LabelCap))
                     {
                         //Draw thing stuff.
                         Widgets.DrawHighlightIfMouseover(rowRect);

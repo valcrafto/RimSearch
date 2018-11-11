@@ -56,7 +56,10 @@ namespace RimSearch.Logic
         /// Get everything?
         /// </summary>
         public bool filterAll = false;
-
+        /// <summary>
+        /// Get only mineable?
+        /// </summary>
+        public bool filterMineable = false;
         /// <summary>
         /// Predicates to use while we search through all things.
         /// </summary>
@@ -74,7 +77,7 @@ namespace RimSearch.Logic
         /// <summary>
         /// Special flags to look out for.
         /// </summary>
-        public static string flagChars = "!-#.*";
+        public static string flagChars = "!-#.*,";
 
         /// <summary>
         /// Empty constructor.
@@ -145,6 +148,10 @@ namespace RimSearch.Logic
 
                             case '*': //Get all.
                                 filterAll = true;
+                                break;
+
+                            case ',': //Get mineable.
+                                filterMineable = true;
                                 break;
 
                             default:
@@ -278,7 +285,19 @@ namespace RimSearch.Logic
                 }
             }
 
-            //WorldMap
+            //Mineable
+            if (filterMineable)
+            {
+                // foreach (Thing thing in map.listerBuildings.allBuildingsColonist) // Buildings
+                foreach (Thing thing in map.listerThings.ThingsInGroup(ThingRequestGroup.Everything))
+                {
+                    if (thing.def.mineable)
+                    {
+                        ExecuteThing(thing);
+                    }
+                }
+            }
+            //WorldMap 
 
             //Lookup world objects.
             if (filterWorldMap)
@@ -286,7 +305,6 @@ namespace RimSearch.Logic
                 //Look in world map.
                 ExecuteWorldMap(Find.World);
             }
-
         }
 
         /// <summary>
@@ -343,7 +361,7 @@ namespace RimSearch.Logic
         /// <param name="world">Planet to look in.</param>
         public void ExecuteWorldMap(World world)
         {
-            foreach(WorldObject worldObject in world.worldObjects.AllWorldObjects)
+            foreach(WorldObject worldObject in Find.WorldObjects.AllWorldObjects)
             {
                 ExecuteWorldObject(worldObject);
             }

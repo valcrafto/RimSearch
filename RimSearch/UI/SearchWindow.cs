@@ -96,6 +96,8 @@ namespace RimSearch.UI
             //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
             //Solo un comentario :)
 
+            UnityEngine.GUI.FocusControl("searchBarRect");
+
             //If search terms do not match; 
             if (searchTerm != oldSearchTerm)
             {

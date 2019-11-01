@@ -95,7 +95,8 @@ namespace RimSearch.UI
             //searchTerm = Widgets.TextField(searchBarRect, searchTerm);
             //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
 
-            if (searchTerm == "z")
+            //if (searchTerm == "z")
+            if (searchTerm == RimSearch.Data.RimSearch.settings.defaultSearchTerm)
             {
                 searchTerm = Data.RimSearch.settings.defaultSearchTerm;
                 GUI.SetNextControlName("searchBarField");

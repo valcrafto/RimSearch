@@ -102,6 +102,7 @@ namespace RimSearch.Logic
         /// </summary>
         public void ParseSearchTerm()
         {
+            
             StringBuilder labelSearch = new StringBuilder();
 
             //Parser state machine

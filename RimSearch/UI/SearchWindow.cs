@@ -51,7 +51,7 @@ namespace RimSearch.UI
         /// Working variable for the scroll window.
         /// </summary>
         public Vector2 resultsAreaScroll = new Vector2();
-
+        
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -92,13 +92,23 @@ namespace RimSearch.UI
             //Draw search bar widget.
             string oldSearchTerm = searchTerm;
 
-
-
             //searchTerm = Widgets.TextField(searchBarRect, searchTerm);
             //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
-            GUI.SetNextControlName("searchBarField");
-            searchTerm = GUI.TextField(searchBarRect, searchTerm);
-            GUI.FocusControl("searchBarField");
+
+            if (searchTerm == "z")
+            {
+                searchTerm = Data.RimSearch.settings.defaultSearchTerm;
+                GUI.SetNextControlName("searchBarField");
+                searchTerm = GUI.TextField(searchBarRect, searchTerm);
+                GUI.FocusControl("searchBarField");
+                ((TextEditor)GUIUtility.GetStateObject(typeof(TextEditor), GUIUtility.keyboardControl)).MoveTextEnd();
+            }
+            else {
+                GUI.SetNextControlName("searchBarField");
+                searchTerm = GUI.TextField(searchBarRect, searchTerm);
+                GUI.FocusControl("searchBarField");
+            }
+
 
             //If search terms do not match; 
             if (searchTerm != oldSearchTerm)
@@ -116,6 +126,7 @@ namespace RimSearch.UI
 
                 if (ticksSinceLastSearchTermEdit >= ticksToPassBeforeStartingSearch)
                 {
+                    
                     //Reset dirty status.
                     searchTermDirty = false;
 

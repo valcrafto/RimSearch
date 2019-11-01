@@ -30,9 +30,9 @@ namespace RimSearch.UI
             int controlID = GUIUtility.GetControlID(FocusType.Keyboard) + 1;
 
             //Handle control.
+            
             string outText = GUI.TextField(rect, text);
             
-
             //Overlay parts of text.
             TextEditor textEditor = (TextEditor)GUIUtility.GetStateObject(typeof(TextEditor), controlID);
             //textEditor.controlID = controlID;

@@ -58,10 +58,12 @@ namespace RimSearch.Data
                 Rect textFieldRect = new Rect(labelRect);
                 textFieldRect.x += labelRect.width;
                 textFieldRect.width = inRect.width - labelRect.width;
+                GUI.SetNextControlName("searchBarField");
 
-                settings.defaultSearchTerm = Widgets.TextField(textFieldRect, settings.defaultSearchTerm);
-                
+                //settings.defaultSearchTerm = Widgets.TextField(textFieldRect, settings.defaultSearchTerm);
+                settings.defaultSearchTerm = GUI.TextField(textFieldRect, settings.defaultSearchTerm);
 
+                GUI.FocusControl("searchBarField");
 
             }
         }

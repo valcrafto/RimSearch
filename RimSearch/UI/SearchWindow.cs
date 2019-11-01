@@ -91,12 +91,14 @@ namespace RimSearch.UI
 
             //Draw search bar widget.
             string oldSearchTerm = searchTerm;
-            
-            searchTerm = Widgets.TextField(searchBarRect, searchTerm);
-            //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
-            //Solo un comentario :)
 
-            UnityEngine.GUI.FocusControl("searchBarRect");
+
+
+            //searchTerm = Widgets.TextField(searchBarRect, searchTerm);
+            //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
+            GUI.SetNextControlName("searchBarField");
+            searchTerm = GUI.TextField(searchBarRect, searchTerm);
+            GUI.FocusControl("searchBarField");
 
             //If search terms do not match; 
             if (searchTerm != oldSearchTerm)

@@ -94,7 +94,7 @@ namespace RimSearch.UI
             
             searchTerm = Widgets.TextField(searchBarRect, searchTerm);
             //searchTerm = SearchGUI.FormattedTextField(searchBarRect, searchTerm);
-            
+            //Solo un comentario :)
 
             //If search terms do not match; 
             if (searchTerm != oldSearchTerm)
